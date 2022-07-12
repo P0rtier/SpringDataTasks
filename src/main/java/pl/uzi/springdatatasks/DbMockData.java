@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-import pl.uzi.springdatatasks.entities.Customer;
-import pl.uzi.springdatatasks.entities.Order;
-import pl.uzi.springdatatasks.entities.Product;
-import pl.uzi.springdatatasks.repositories.CustomerRepo;
-import pl.uzi.springdatatasks.repositories.OrderRepo;
-import pl.uzi.springdatatasks.repositories.ProductRepo;
+import pl.uzi.springdatatasks.dao.entities.Customer;
+import pl.uzi.springdatatasks.dao.entities.Order;
+import pl.uzi.springdatatasks.dao.entities.Product;
+import pl.uzi.springdatatasks.dao.repositories.CustomerRepo;
+import pl.uzi.springdatatasks.dao.repositories.OrderRepo;
+import pl.uzi.springdatatasks.dao.repositories.ProductRepo;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
