@@ -1,4 +1,4 @@
-package pl.uzi.springdatatasks.entities;
+package pl.uzi.springdatatasks.dao.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
