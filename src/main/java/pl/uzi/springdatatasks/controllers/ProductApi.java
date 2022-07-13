@@ -9,7 +9,7 @@ import pl.uzi.springdatatasks.managers.ProductManager;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/product/api")
+@RequestMapping("/api")
 public class ProductApi {
 
     private ProductManager productManager;
@@ -22,27 +22,27 @@ public class ProductApi {
     public ProductApi() {
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/product/all")
     public Iterable<Product> getAll(){
         return productManager.findAll();
     }
 
-    @GetMapping("/get")
+    @GetMapping("/product")
     public Product getById(@RequestParam Long index){
         return productManager.find(index).orElseThrow(NoSuchElementException::new);
     }
 
-    @PostMapping
+    @PostMapping("/admin/product")
     public Product postElem(@RequestBody Product product){
         return productManager.save(product);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/product")
     public void delete(@RequestParam Long index){
         productManager.delete(index);
     }
 
-    @PutMapping
+    @PutMapping("/admin/product")
     public Product putElement(@RequestParam Long index, @RequestBody Product product){
         Product product1 = new Product();
         product1.setId(index);
@@ -52,7 +52,7 @@ public class ProductApi {
         return productManager.save(product1);
     }
 
-    @PatchMapping
+    @PatchMapping("/admin/product")
     public boolean postElement(@RequestParam Long index, @RequestBody Product product){
 
         try{

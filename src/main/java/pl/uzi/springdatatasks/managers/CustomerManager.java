@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.uzi.springdatatasks.dao.entities.Customer;
 import pl.uzi.springdatatasks.dao.repositories.CustomerRepo;
 
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -22,8 +21,8 @@ public class CustomerManager {
         return customerRepo.findAll();
     }
 
-    public Customer findByIndex(Long index){
-        return customerRepo.findById(index).orElseThrow(NoSuchElementException::new);
+    public Optional<Customer> findByIndex(Long index){
+        return customerRepo.findById(index);
     }
 
     public Customer save(Customer customer){
